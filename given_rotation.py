@@ -22,6 +22,26 @@ class GivenRotation:
         a, b = vector[i], vector[j]
         vector[i] = c * a - s * b
         vector[j] = s * a + c * b
+    def left_multiply_2_by_2(self, a,b):
+        c = self.cos
+        s = self.sin
+        a_new = c * a - s * b
+        b_new = s * a + c * b
+        return a_new, b_new
+    def right_multiply(self, vector): # vector is a row vector
+        i = self.index_i
+        j = self.index_j
+        c = self.cos
+        s = self.sin
+        a, b = vector[i], vector[j]
+        vector[i] = c * a + s * b
+        vector[j] = -s * a + c * b
+    def right_multiply_2_by_2(self, a,b):
+        c = self.cos
+        s = self.sin
+        a_new = c * a + s * b
+        b_new = -s * a + c * b
+        return a_new, b_new
 
 
 
