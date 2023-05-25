@@ -51,11 +51,11 @@ def calculate_cos_and_sin( a, b):
             s = 0
         else:
             if abs(b) > abs(a):
-                r = a / b
-                s = 1 / np.sqrt(1 + r**2)
+                r = np.float64(a / b)
+                s =np.float64( 1 / np.sqrt(1 + r**2))
                 c = s * r
             else:
-                r = b / a
-                c = 1 / np.sqrt(1 + r**2)
+                r = np.float64(b / a)
+                c = np.float64(1 / np.sqrt(1 + r**2))
                 s = c * r
         return c, s  
